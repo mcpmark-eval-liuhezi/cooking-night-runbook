@@ -1,0 +1,17 @@
+name: Publish Check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Print the runbook contents into the run log
+        run: |
+          echo "===== BEGIN cooking night runbook ====="
+          cat RUNBOOK.md
+          echo "===== END cooking night runbook ====="
